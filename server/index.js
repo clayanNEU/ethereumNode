@@ -7,9 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 const balances = {
-  "0x1": 100,
-  "0x2": 50,
-  "0x3": 75,
+  "0241e850d0f175166c90787a84beca53d11d23fe67ab748409d7fc483b68a3b174": 100,
+  "027813b7ffadd16cbacbb0a1b7c5d5f28c07324ac4d57b3e77e784beb1d07465fe": 50,
+  "03dea4d3b698a93c56d29614daae3f093fd829d9667f0e44d48b6f1f5e989b0cb5": 75,
 };
 
 app.get("/balance/:address", (req, res) => {
@@ -19,6 +19,10 @@ app.get("/balance/:address", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
+  // todo: get a signature from the client side application
+  // then recover the public address from the signature (that will be the sender)
+  // client should not set sender
+  // if we derive the address from the signature, we know that that sig could have only originated from the person w the private key
   const { sender, recipient, amount } = req.body;
 
   setInitialBalance(sender);

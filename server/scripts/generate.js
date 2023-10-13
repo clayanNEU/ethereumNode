@@ -1,3 +1,4 @@
+const { keccak256 } = require("ethereum-cryptography/keccak");
 const secp = require("ethereum-cryptography/secp256k1");
 const { toHex } = require("ethereum-cryptography/utils");
 
@@ -11,5 +12,9 @@ console.log("private key:", toHex(privateKey));
 // we get the public key from the private key
 const publicKey = secp.secp256k1.getPublicKey(privateKey);
 console.log("Public Key: ", toHex(publicKey));
+
+// get etheruem address
+let address = keccak256(publicKey.slice(1).slice(-20));
+console.log("Address: ", toHex(address));
 
 // run this script w: node scripts/generate.js

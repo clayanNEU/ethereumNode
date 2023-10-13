@@ -12,9 +12,9 @@ app.use(express.json());
 
 // balances that each address starts with, these are the public addresses
 const balances = {
-  "0241e850d0f175166c90787a84beca53d11d23fe67ab748409d7fc483b68a3b174": 100,
-  "027813b7ffadd16cbacbb0a1b7c5d5f28c07324ac4d57b3e77e784beb1d07465fe": 50,
-  "03dea4d3b698a93c56d29614daae3f093fd829d9667f0e44d48b6f1f5e989b0cb5": 75,
+  "03df57fd861fe96ee04918307d045b578b44cf1140adb10b0abd7ec5017dad95a3": 100,
+  "035222cf19e7ed6915a7a39effb3e206a22bec18917dc2d5c7ff29e61010f37324": 50,
+  "02fde8a2da2cfaa535edbe3bb7564fb691df7e55bcb462dd959c9ae2d25fdb1b89": 75,
 };
 
 // gets the balance from the address
